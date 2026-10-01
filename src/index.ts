@@ -1,25 +1,29 @@
-let nome: string;
-let sobrenome: string;
-let nomecompleto: string;
-let idade: number;
-let brasileiro: boolean;
-let enderecos: string[]; //Ou let enderecos: Arrays<string>;
+class Pessoa {
+     nome: string;
+     sobrenome: string;
+     idade: number;
+     brasileiro: boolean;
+     enderecos: string[]; //Ou let enderecos: Arrays<string>;
 
-nome = 'Esdras';
-sobrenome = 'Arthur';
-idade = 43;
-brasileiro = false;
-nomecompleto = nome + " " + sobrenome;
-enderecos = ["Rua B, Aracaju", "Rua C, Tobias Barreto"];
+     constructor(nome: string, sobrenome: string, idade: number, brasileiro: boolean, enderecos: string[]) {
+        this.nome = nome;
+        this.sobrenome = sobrenome;
+        this.idade = idade;
+        this.brasileiro = brasileiro;
+        this.enderecos = enderecos;
+    }
 
-let exibirnome = function(): string {
-    return ('O nome completo é: ${nomecompleto}');
-};
+    exibirnome(): string {
+    return ('O nome completo é: ${this.nome} ${this.sobrenome}');
+    };
 
-let recuperaEndereco = function (posicao: number): string | undefined {
-  return enderecos[posicao];
-};
+    recuperaEndereco(posicao: number): string | undefined {
+    return this.enderecos[posicao];
+    };
 
-console.log(exibirnome());
-console.log(recuperaEndereco(1));
+}
+
+const Esdras: Pessoa = new Pessoa("Esdras", "Arthur", 19, true, ['Rua S']); 
+
+console.log(Esdras.exibirnome);
 
