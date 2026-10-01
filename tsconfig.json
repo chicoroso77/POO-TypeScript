@@ -8,6 +8,7 @@
     // Environment Settings
     // See also https://aka.ms/tsconfig/module
     "module": "nodenext",
+    "moduleResolution": "NodeNext",
     "target": "es2020",
     "types": [],
     // For nodejs:
@@ -19,6 +20,7 @@
     "sourceMap": true,
     "declaration": true,
     "declarationMap": true,
+    
 
     // Stricter Typechecking Options
     "noUncheckedIndexedAccess": true,
