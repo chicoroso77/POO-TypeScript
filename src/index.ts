@@ -14,7 +14,7 @@ class Pessoa {
     }
 
     exibirnome(): string {
-    return ('O nome completo é: ${this.nome} ${this.sobrenome}');
+    return (`O nome completo é: ${this.nome} ${this.sobrenome}`);
     };
 
     recuperaEndereco(posicao: number): string | undefined {
@@ -25,5 +25,5 @@ class Pessoa {
 
 const Esdras: Pessoa = new Pessoa("Esdras", "Arthur", 19, true, ['Rua S']); 
 
-console.log(Esdras.exibirnome);
+console.log(Esdras.exibirnome());
 
