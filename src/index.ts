@@ -26,4 +26,6 @@ class Pessoa {
 const Esdras: Pessoa = new Pessoa("Esdras", "Arthur", 19, true, ['Rua S']); 
 
 console.log(Esdras.exibirnome());
+console.log(Esdras.recuperaEndereco(0));
+console.log(Esdras);
 
