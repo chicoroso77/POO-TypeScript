@@ -6,9 +6,13 @@ const maria: Pessoa = new Pessoa("Maria", "José", 26, false, ['Rua B']);
 
 console.log(Esdras.exibirnome());
 console.log(Esdras.recuperaEndereco(0));
+console.log(Esdras.nome);
 console.log(Esdras);
-console.log("-------------------------------")
+console.log("-------------------------------");
 console.log(maria.exibirnome());
 console.log(maria.recuperaEndereco(0));
-console.log(maria);
+console.log(maria.nome);
+console.log("-------------------------------");
+console.log(`Quantidade de pessoas: ${Pessoa.getQuantidadePessoas()}`);
+
 

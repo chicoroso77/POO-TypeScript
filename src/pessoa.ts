@@ -5,12 +5,15 @@ class Pessoa {
      brasileiro: boolean;
      enderecos: string[]; //Ou let enderecos: Arrays<string>;
 
+     static quantidadePessoas: number = 0;
+
      constructor(nome: string, sobrenome: string, idade: number, brasileiro: boolean, enderecos: string[]) {
         this.nome = nome;
         this.sobrenome = sobrenome;
         this.idade = idade;
         this.brasileiro = brasileiro;
         this.enderecos = enderecos;
+        Pessoa.quantidadePessoas++;
     }
 
     exibirnome(): string {
@@ -20,6 +23,10 @@ class Pessoa {
     recuperaEndereco(posicao: number): string | undefined {
     return this.enderecos[posicao];
     };
+
+    static getQuantidadePessoas(): number {
+    return Pessoa.quantidadePessoas;
+    }
 
 }
 
