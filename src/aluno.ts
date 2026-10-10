@@ -7,6 +7,8 @@ class Aluno {
      curso: string; 
      situacao: string;
      matricula: number; 
+     
+     static quantidadeAlunos: number = 0;
 
      constructor(nome: string, sobrenome: string, idade: number, brasileiro: boolean, enderecos: string[], curso: string, situacao: string, matricula: number) {
         this.nome = nome;
@@ -17,9 +19,15 @@ class Aluno {
         this.curso = curso;
         this.situacao = situacao;
         this.matricula = matricula;
+        Aluno.quantidadeAlunos++;
      }
 
         recuperaEndereco(posicao: number): string | undefined {
         return this.enderecos[posicao];
         }
+
+        static getQuantidadeAlunos(): number {
+        return Aluno.quantidadeAlunos;
+        }
 }
+export { Aluno };
