@@ -8,6 +8,7 @@ const Luis: Professor = new Professor(234, "Luis", "Santos", 56, false, ['Portug
 
 console.log(Esdras);
 console.log(Felipe);
+console.log(Felipe.recuperaEndereco(0));
 console.log(Luis);
 console.log("-------------------------------");
 console.log(`Quantidade de pessoas: ${Pessoa.getQuantidadePessoas()}`);
