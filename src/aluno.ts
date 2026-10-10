@@ -1,30 +1,34 @@
-class Aluno {
-     nome: string;
-     sobrenome: string;
-     idade: number;
-     brasileiro: boolean;
-     enderecos: string[]; //Ou let enderecos: Arrays<string>;
+import { Pessoa } from "./pessoa.js"
+
+class Aluno extends Pessoa {
+     
+   //////////////////////////
+    //Atributos de instância//
+    ////////////////////////// 
+
      curso: string; 
      situacao: string;
-     matricula: number; 
-     
+
+    //////////////////////////
+    //Atributos estáticos/////
+    ////////////////////////// 
+  
      static quantidadeAlunos: number = 0;
 
-     constructor(matricula: number, nome: string, sobrenome: string, idade: number, brasileiro: boolean, enderecos: string[], curso: string, situacao: string) {
-        this.matricula = matricula;
-        this.nome = nome;
-        this.sobrenome = sobrenome;
-        this.idade = idade;
-        this.brasileiro = brasileiro;
-        this.enderecos = enderecos;
+     ///////////////////
+    /////Construtor////
+    ///////////////////
+
+     constructor(matricula: number, nome: string, sobrenome: string, sexo: string, CPF: string, idade: number, brasileiro: boolean, enderecos: string[], curso: string, situacao: string) {
+        super(matricula, nome, sobrenome, sexo, CPF, idade, brasileiro, enderecos);
         this.curso = curso;
         this.situacao = situacao;
         Aluno.quantidadeAlunos++;
      }
 
-        recuperaEndereco(posicao: number): string | undefined {
-        return this.enderecos[posicao];
-        }
+     /////////////////////////
+    //Métodos de Instância////
+    ////////////////////////
 
         static getQuantidadeAlunos(): number {
         return Aluno.quantidadeAlunos;
