@@ -21,6 +21,7 @@ class Professor extends Pessoa {
      constructor(matricula: number, nome: string, sobrenome: string, idade: number, brasileiro: boolean, enderecos: string[], sexo: string, CPF: string, salario: number) {
         super(matricula, nome, sobrenome, sexo, CPF, idade, brasileiro, enderecos);
         this.salario = salario;
+        Professor.quantidadeProfessores++;
      }
        
      

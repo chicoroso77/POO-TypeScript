@@ -1,4 +1,4 @@
-class Pessoa {
+abstract class Pessoa {
 
     //////////////////////////
     //Atributos de instância//
@@ -54,6 +54,16 @@ class Pessoa {
     static getQuantidadePessoas(): number {
     return Pessoa.quantidadePessoas;
     }
+
+    /////////////////////////
+    //Métodos Abstratos//////
+    ////////////////////////
+
+    //Método abstrato - Sem implementação
+	//Usado para garantir que as classes que herdem de pessoa possuam uma implementação do gerarMatricula, 
+	//assim é possivel que cada classe que herde de pessoa implemente sua forma específica de gerar matricula (Polimorfismo)
+
+    abstract gerarMatricula(): number;
 
 }
 
