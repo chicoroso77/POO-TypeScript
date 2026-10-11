@@ -23,8 +23,8 @@ abstract class Pessoa {
     /////Construtor////
     ///////////////////
 
-     constructor(matricula: number, nome: string, sobrenome: string, sexo: string, CPF: string, idade: number, brasileiro: boolean, enderecos: string[]) {
-        this.matricula = matricula;
+     constructor(nome: string, sobrenome: string, sexo: string, CPF: string, idade: number, brasileiro: boolean, enderecos: string[]) {
+        this.matricula = this.gerarMatricula();
         this.nome = nome;
         this.sobrenome = sobrenome;
         this.sexo = sexo;
