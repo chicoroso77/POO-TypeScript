@@ -1,3 +1,5 @@
+import  { Endereco } from "./enderecos.js";
+
 abstract class Pessoa {
 
     //////////////////////////
@@ -11,7 +13,7 @@ abstract class Pessoa {
      CPF: string = '';
      idade: number = 0;
      brasileiro: boolean = true;
-     enderecos: string[] = []; //Ou let enderecos: Arrays<string>;
+     enderecos: Endereco[] = []; //Ou let enderecos: Arrays<string>;
 
     //////////////////////////
     //Atributos estáticos/////
@@ -23,7 +25,7 @@ abstract class Pessoa {
     /////Construtor////
     ///////////////////
 
-     constructor(nome: string, sobrenome: string, sexo: string, CPF: string, idade: number, brasileiro: boolean, enderecos: string[]) {
+     constructor(nome: string, sobrenome: string, sexo: string, CPF: string, idade: number, brasileiro: boolean, enderecos: Endereco[] = []) {
         this.matricula = this.gerarMatricula();
         this.nome = nome;
         this.sobrenome = sobrenome;
@@ -43,7 +45,7 @@ abstract class Pessoa {
     return (`O nome completo é: ${this.nome} ${this.sobrenome}`);
     };
 
-    recuperaEndereco(posicao: number): string | undefined {
+    recuperaEndereco(posicao: number): Endereco | undefined {
     return this.enderecos[posicao];
     };
 

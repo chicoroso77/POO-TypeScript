@@ -1,3 +1,4 @@
+import { Endereco } from "./enderecos.js";
 import { Pessoa } from "./pessoa.js"
 
 class Aluno extends Pessoa {
@@ -7,7 +8,7 @@ class Aluno extends Pessoa {
     ////////////////////////// 
 
      curso: string; 
-     situacao: string;
+     situacao: SituacaoAluno; //Assoiação Estrutural - Composição da Classe Aluno com a Enum SituacaoAluno - A partir do aluno
 
     //////////////////////////
     //Atributos estáticos/////
@@ -19,7 +20,7 @@ class Aluno extends Pessoa {
     /////Construtor////
     ///////////////////
 
-     constructor( nome: string, sobrenome: string, sexo: string, CPF: string, idade: number, brasileiro: boolean, enderecos: string[], curso: string, situacao: string) {
+     constructor( nome: string, sobrenome: string, sexo: string, CPF: string, idade: number, brasileiro: boolean, enderecos: Endereco[], curso: string, situacao: SituacaoAluno) {
         super( nome, sobrenome, sexo, CPF, idade, brasileiro, enderecos);
         this.matricula = this.gerarMatricula();
         this.curso = curso;
@@ -46,4 +47,13 @@ class Aluno extends Pessoa {
         return Aluno.quantidadeAlunos;
         }
 }
-export { Aluno };
+enum SituacaoAluno {
+      ATIVO = "Ativo",
+      Matriculado = "Matriculado",
+      TRANCADO = "Trancado",
+      CONCLUIDO = "Concluído",
+      CANCELADO = "Cancelado",   
+      FORMANDO = "Formando"
+}
+
+export { Aluno, SituacaoAluno };

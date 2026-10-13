@@ -1,14 +1,27 @@
 import { Pessoa } from "./pessoa.js"
-import { Aluno } from "./aluno.js"
+import { Aluno, SituacaoAluno } from "./aluno.js"
 import { Professor } from "./professor.js"
+import  { Endereco } from "./enderecos.js";
 
-const Felipe: Aluno = new Aluno("Felipe", "José", "Masculino", "123.456.789-00", 34, true, ['Rua F'], "Informática", "Matriculado");
-const Diego: Professor = new Professor("Diego", "Armando", 56, false, ['Portugal'], "Masculino", "123.456.789-00", 1000);
+const endereco1: Endereco = new Endereco("49000",12, "Rua A", "Bairro A", "Cidade A", "Estado A");  
+const endereco2: Endereco = new Endereco("49888",67, "Rua B", "Bairro B", "Cidade B", "Estado B");  
+
+const Felipe: Aluno = new Aluno("Felipe", "José", "Masculino", "123.456.789-00", 34, true, [endereco1], "Informática", SituacaoAluno.FORMANDO);
+const Diego: Professor = new Professor("Diego", "Armando", 56, false, [endereco1, endereco2], "Masculino", "123.456.789-00", 1000);
 
 console.log(Felipe);
 console.log(Felipe.recuperaEndereco(0));
 console.log(Diego);
 console.log(Diego.recuperaEndereco(0));
+
+if (Diego.enderecos[0] !== undefined) {
+    console.log(Diego.enderecos[0].CEP);
+}
+
+if (Diego.enderecos[1] !== undefined) {
+    console.log(Diego.enderecos[1].CEP);
+}
+
 console.log("-------------------------------");
 console.log(`Quantidade de pessoas: ${Pessoa.getQuantidadePessoas()}`);
 console.log(`Quantidade de alunos: ${Aluno.getQuantidadeAlunos()}`);
