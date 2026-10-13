@@ -1,7 +1,8 @@
 import { Endereco } from "./enderecos.js";
 import { Pessoa } from "./pessoa.js"
+import type { Projeto } from "./projeto.js";
 
-class Professor extends Pessoa {
+class Professor extends Pessoa implements Projeto {
 
    //////////////////////////
    //Atributos de instância//
@@ -25,6 +26,7 @@ class Professor extends Pessoa {
         this.salario = salario;
         Professor.quantidadeProfessores++;
      }
+  
 
      /////////////////////////
      //Métodos de Instância////
@@ -37,6 +39,13 @@ class Professor extends Pessoa {
      gerarMatricula(): number {
       return Math.floor(Math.random() * (99999999 - 10000000 + 1)) + 10000000;
      }
+
+    submeterProjetoPesquisa(): void {
+      console.log("Isso é uma submissão de projeto de pesquisa de Professor.");
+    }
+    SubmeterProjetoExtensao(): void {
+      console.log("Isso é uma submissão de projeto de extensão de Professor.");
+    }
        
      
    /////////////////////////

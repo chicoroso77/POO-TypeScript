@@ -1,7 +1,8 @@
 import { Endereco } from "./enderecos.js";
 import { Pessoa } from "./pessoa.js"
+import type { Projeto } from "./projeto.js";
 
-class Aluno extends Pessoa {
+class Aluno extends Pessoa implements Projeto {
      
    //////////////////////////
     //Atributos de instância//
@@ -28,6 +29,7 @@ class Aluno extends Pessoa {
         Aluno.quantidadeAlunos++;
      }
 
+
      /////////////////////////
      //Métodos de Instância////
      ////////////////////////
@@ -41,6 +43,13 @@ class Aluno extends Pessoa {
       let numero: number = Math.floor(Math.random() * (9999 - 1000 + 1)) + 1000;
       return Number(`${ano}${numero}`);
      }
+
+   submeterProjetoPesquisa(): void {
+      console.log("Isso é uma submissão de projeto de pesquisa de aluno.");
+   }
+   SubmeterProjetoExtensao(): void {
+      console.log("Isso é uma submissão de projeto de extensão de aluno.");
+   }
 
 
         static getQuantidadeAlunos(): number {
