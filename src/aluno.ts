@@ -1,3 +1,4 @@
+import type { Curso } from "./curso.js";
 import { Endereco } from "./enderecos.js";
 import { Pessoa } from "./pessoa.js"
 import type { Projeto } from "./projeto.js";
@@ -8,7 +9,7 @@ class Aluno extends Pessoa implements Projeto {
     //Atributos de instância//
     ////////////////////////// 
 
-     curso: string; 
+     private _curso!: Curso;   //Associação Estrutural
      situacao: SituacaoAluno; //Assoiação Estrutural - Composição da Classe Aluno com a Enum SituacaoAluno - A partir do aluno
 
     //////////////////////////
@@ -16,6 +17,7 @@ class Aluno extends Pessoa implements Projeto {
     ////////////////////////// 
   
      static quantidadeAlunos: number = 0;
+
 
      ///////////////////
     /////Construtor////
