@@ -6,7 +6,7 @@ abstract class Pessoa {
     //Atributos de instância//
     ////////////////////////// 
 
-     matricula: number = 0;
+     protected _matricula: number = 0;
      nome: string = '';
      sobrenome: string = '';
      sexo: string = '';
@@ -20,6 +20,18 @@ abstract class Pessoa {
     ////////////////////////// 
 
     static quantidadePessoas: number = 0;
+
+    /////////////////////
+    ////Gets e Sets//////
+    ////////////////////
+
+    public get matricula(): number {
+        return this._matricula;
+    }
+
+    protected set matricula(value: number) {
+        this._matricula = value;
+    }
 
     ///////////////////
     /////Construtor////

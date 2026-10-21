@@ -9,6 +9,7 @@ class Aluno extends Pessoa implements Projeto {
     ////////////////////////// 
 
       //Associação Estrutural
+      curso: string; //Associação Estrutural - Composição da Classe Aluno com a Classe Curso - A partir do aluno
      situacao: SituacaoAluno; //Assoiação Estrutural - Composição da Classe Aluno com a Enum SituacaoAluno - A partir do aluno
 
     //////////////////////////
@@ -25,6 +26,7 @@ class Aluno extends Pessoa implements Projeto {
      constructor( nome: string, sobrenome: string, sexo: string, CPF: string, idade: number, brasileiro: boolean, enderecos: Endereco[], curso: string, situacao: SituacaoAluno) {
         super( nome, sobrenome, sexo, CPF, idade, brasileiro, enderecos);
         this.matricula = this.gerarMatricula();
+        this.curso = curso;
         this.situacao = situacao;
         Aluno.quantidadeAlunos++;
      }
