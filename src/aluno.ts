@@ -4,13 +4,32 @@ import type { Projeto } from "./projeto.js";
 
 class Aluno extends Pessoa implements Projeto {
      
-   //////////////////////////
+    //////////////////////////
     //Atributos de instância//
     ////////////////////////// 
 
-      //Associação Estrutural
-      curso: string; //Associação Estrutural - Composição da Classe Aluno com a Classe Curso - A partir do aluno
-     situacao: SituacaoAluno; //Assoiação Estrutural - Composição da Classe Aluno com a Enum SituacaoAluno - A partir do aluno
+   //Associação Estrutural
+   private _curso: string = ''; //Associação Estrutural - Composição da Classe Aluno com a Classe Curso - A partir do aluno
+   private _situacao: SituacaoAluno = SituacaoAluno.ATIVO; //Assoiação Estrutural - Composição da Classe Aluno com a Enum SituacaoAluno - A partir do aluno
+   
+
+   ///////////////
+   //Gets e Sets//
+   ///////////////
+
+   public get curso(): string {
+      return this._curso;
+   }
+   public set curso(value: string) {
+      this._curso = value;
+   }
+
+   public get situacao(): SituacaoAluno {
+      return this._situacao;
+   }
+   public set situacao(value: SituacaoAluno) {
+      this._situacao = value;
+   }
 
     //////////////////////////
     //Atributos estáticos/////
@@ -19,15 +38,15 @@ class Aluno extends Pessoa implements Projeto {
      static quantidadeAlunos: number = 0;
 
 
-     ///////////////////
+    ///////////////////
     /////Construtor////
     ///////////////////
 
      constructor( nome: string, sobrenome: string, sexo: string, CPF: string, idade: number, brasileiro: boolean, enderecos: Endereco[], curso: string, situacao: SituacaoAluno) {
         super( nome, sobrenome, sexo, CPF, idade, brasileiro, enderecos);
         this.matricula = this.gerarMatricula();
-        this.curso = curso;
-        this.situacao = situacao;
+        this._curso = curso;
+        this._situacao = situacao;
         Aluno.quantidadeAlunos++;
      }
 
@@ -40,16 +59,16 @@ class Aluno extends Pessoa implements Projeto {
 	  // A implementação do método gerarMatricula na classe Aluno sobrescreve o método abstrato definido na classe Pessoa
 	  // Associaçaõ Comportamental - Dependência da Classe Aluno com as classes Date e Math
         
-     gerarMatricula(): number {
+   protected gerarMatricula(): number {
       let ano: number = new Date().getFullYear();
       let numero: number = Math.floor(Math.random() * (9999 - 1000 + 1)) + 1000;
       return Number(`${ano}${numero}`);
      }
 
-   submeterProjetoPesquisa(): void {
+   public submeterProjetoPesquisa(): void {
       console.log("Isso é uma submissão de projeto de pesquisa de aluno.");
    }
-   SubmeterProjetoExtensao(): void {
+   public SubmeterProjetoExtensao(): void {
       console.log("Isso é uma submissão de projeto de extensão de aluno.");
    }
 

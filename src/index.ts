@@ -9,10 +9,8 @@ const endereco2: Endereco = new Endereco("49888",67, "Rua B", "Bairro B", "Cidad
 const Felipe: Aluno = new Aluno("Felipe", "José", "Masculino", "123.456.789-00", 34, true, [endereco1], "Informática", SituacaoAluno.FORMANDO);
 const Diego: Professor = new Professor("Diego", "Armando", 56, false, [endereco1, endereco2], "Masculino", "123.456.789-00", 1000);
 
-console.log(Felipe.matricula);
-Felipe.matricula = Felipe.gerarMatricula();
-console.log(Felipe.matricula);
-
+console.log(Felipe);
+console.log(Diego);
 
 console.log("-------------------------------");
 console.log(`Quantidade de pessoas: ${Pessoa.getQuantidadePessoas()}`);
