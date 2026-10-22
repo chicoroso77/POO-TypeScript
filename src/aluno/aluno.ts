@@ -1,6 +1,6 @@
-import { Endereco } from "./enderecos.js";
-import { Pessoa } from "./pessoa.js"
-import type { Projeto } from "./projeto.js";
+import { Endereco } from "../endereco/enderecos.js";
+import { Pessoa } from "../pessoa/pessoa.js"
+import type { Projeto } from "../projeto/projeto.js";
 
 class Aluno extends Pessoa implements Projeto {
      

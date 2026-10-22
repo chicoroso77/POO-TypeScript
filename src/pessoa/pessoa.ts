@@ -1,4 +1,4 @@
-import  { Endereco } from "./enderecos.js";
+import  { Endereco } from "../endereco/enderecos.js";
 
 abstract class Pessoa {
 
@@ -13,7 +13,7 @@ abstract class Pessoa {
      private _CPF: string = '';
      private _idade: number = 0;
      private _brasileiro: boolean = true;
-     private _enderecos: Endereco[] = []; //Ou let enderecos: Arrays<string>;
+     private _enderecos: Endereco[] = []; //Ou let enderecos: Arrays<string>;  //Associação Estrutural - Composição da Classe Pessoa com a Classe Endereco - A partir da pessoa
     
 
     //////////////////////////
@@ -114,11 +114,11 @@ abstract class Pessoa {
     //Métodos de Instância////
     ////////////////////////
 
-    exibirnome(): string {
+    public exibirNomeCompleto(): string {
     return (`O nome completo é: ${this.nome} ${this.sobrenome}`);
     };
 
-    recuperaEndereco(posicao: number): Endereco | undefined {
+    public recuperaEndereco(posicao: number): Endereco | undefined {
     return this.enderecos[posicao];
     };
 
@@ -126,7 +126,7 @@ abstract class Pessoa {
     //Métodos Estáticos//////
     ////////////////////////
 
-    static getQuantidadePessoas(): number {
+    public static getQuantidadePessoas(): number {
     return Pessoa.quantidadePessoas;
     }
 
