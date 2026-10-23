@@ -1,6 +1,6 @@
 import  { Endereco } from "../endereco/enderecos.js";
 
-abstract class Pessoa {
+ abstract class Pessoa {
 
     //////////////////////////
     //Atributos de instância//
