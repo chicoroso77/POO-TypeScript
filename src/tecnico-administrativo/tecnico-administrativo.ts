@@ -33,8 +33,15 @@ abstract class TecnicoAdministrativo extends Pessoa {
     constructor(nome: string, sobrenome: string, sexo: string, CPF: string, idade: number, brasileiro: boolean, enderecos: Endereco[], nacionalidade: string) {
         super(nome, sobrenome, sexo, CPF, idade, brasileiro, enderecos);
         this._nacionalidade = nacionalidade;
+        this.matricula = this.gerarMatricula();
         TecnicoAdministrativo.quantidadeTecnicosAdministrativos++;
     }
+
+    protected  gerarMatricula(): number {
+        let numero: number = Math.floor(Math.random() * 9000) + 100;
+        return Number(`${numero}`);
+    }
+    
 }
 
 export { TecnicoAdministrativo };
