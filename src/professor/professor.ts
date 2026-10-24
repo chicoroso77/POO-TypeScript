@@ -1,3 +1,4 @@
+import type { Campus } from "../campus/campus.js";
 import { Endereco } from "../endereco/enderecos.js";
 import { Pessoa } from "../pessoa/pessoa.js"
 import type { Projeto } from "../projeto/projeto.js";
@@ -9,6 +10,7 @@ class Professor extends Pessoa implements Projeto {
    //////////////////////////  
 
     private _salario: number = 0;
+    private _campus: Campus; 
 
   ///////////////
   //Gets e Sets//
@@ -35,6 +37,7 @@ class Professor extends Pessoa implements Projeto {
         super( nome, sobrenome, sexo, CPF, idade, brasileiro, enderecos);
         this.matricula = this.gerarMatricula();
         this._salario = salario;
+        this._campus = {} as Campus; // Inicializa o campus 
         Professor.quantidadeProfessores++;
      }
   
