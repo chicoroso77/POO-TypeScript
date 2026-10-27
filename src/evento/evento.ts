@@ -35,7 +35,16 @@ class Evento {
     public adicionarParticipante(participante: Pessoa): void {
         if (!this._participantes.includes(participante)) {
         this._participantes.push(participante);
+        participante.adicionarEvento(this);
         }
+    }
+
+    public listarParticipantes(): void {
+        console.log(`Participantes do evento ${this._nome}:`);
+        
+        this._participantes.forEach((participante, index) => {
+            console.log(`${index + 1}. ${participante.nome}`);
+        });
     }
 
 }

@@ -1,4 +1,5 @@
 import  { Endereco } from "../endereco/enderecos.js";
+import type { Evento } from "../evento/evento.js";
 
  abstract class Pessoa {
 
@@ -14,7 +15,8 @@ import  { Endereco } from "../endereco/enderecos.js";
      private _idade: number = 0;
      private _brasileiro: boolean = true;
      private _enderecos: Endereco[] = []; //Ou let enderecos: Arrays<string>;  //Associação Estrutural - Composição da Classe Pessoa com a Classe Endereco - A partir da pessoa
-    
+     private _eventos: Array<Evento> = [];
+     
 
     //////////////////////////
     //Atributos estáticos/////
@@ -94,11 +96,18 @@ import  { Endereco } from "../endereco/enderecos.js";
         this._enderecos = value;
     }
 
+    public get eventos(): Array<Evento> {
+         return this._eventos;
+    }
+     public set eventos(value: Array<Evento>) {
+         this._eventos = value;
+    }
+
     ///////////////////
     /////Construtor////
     ///////////////////
 
-     constructor(nome: string, sobrenome: string, sexo: string, CPF: string, idade: number, brasileiro: boolean, enderecos: Endereco[] = []) {
+     constructor(nome: string, sobrenome: string, sexo: string, CPF: string, idade: number, brasileiro: boolean, enderecos: Endereco[] = [], eventos: Array<Evento> = []) {
         this.matricula = this.gerarMatricula();
         this.nome = nome;
         this.sobrenome = sobrenome;
@@ -107,6 +116,7 @@ import  { Endereco } from "../endereco/enderecos.js";
         this.idade = idade;
         this._brasileiro = brasileiro;
         this._enderecos = enderecos;
+        this._eventos = eventos;
         Pessoa.quantidadePessoas++;
     }
 
@@ -129,6 +139,24 @@ import  { Endereco } from "../endereco/enderecos.js";
     public static getQuantidadePessoas(): number {
     return Pessoa.quantidadePessoas;
     }
+
+    public eventosParticipados(): Array<Evento> {
+        return this._eventos;
+    }
+
+    public adicionarEvento(evento: Evento): void {
+        if (!this._eventos.includes(evento)) {
+            this._eventos.push(evento);
+        }
+    }
+
+    public listarEventos(): void {
+        console.log(`Eventos participados por ${this.nome} ${this.sobrenome}:`);
+        
+        this._eventos.forEach((evento, index) => {
+            console.log(`${index + 1}. ${evento.nome}`);
+        });
+    } 
 
     /////////////////////////
     //Métodos Abstratos//////
