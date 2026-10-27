@@ -1,3 +1,4 @@
+import type { Campus } from "../campus/campus.js";
 import { Endereco } from "../endereco/enderecos.js";
 import { Pessoa } from "../pessoa/pessoa.js"
 import type { Projeto } from "../projeto/projeto.js";
@@ -11,7 +12,9 @@ class Aluno extends Pessoa implements Projeto {
    //Associação Estrutural
    private _curso: string = ''; //Associação Estrutural - Composição da Classe Aluno com a Classe Curso - A partir do aluno
    private _situacao: SituacaoAluno = SituacaoAluno.ATIVO; //Assoiação Estrutural - Composição da Classe Aluno com a Enum SituacaoAluno - A partir do aluno
+   private _campus?: Campus | undefined; 
    
+
 
    ///////////////
    //Gets e Sets//
@@ -31,6 +34,13 @@ class Aluno extends Pessoa implements Projeto {
       this._situacao = value;
    }
 
+   public get campus(): Campus | undefined {
+      return this._campus;
+   }
+   public set campus(value: Campus | undefined) {
+      this._campus = value;
+   }
+
     //////////////////////////
     //Atributos estáticos/////
     ////////////////////////// 
@@ -47,6 +57,7 @@ class Aluno extends Pessoa implements Projeto {
         this.matricula = this.gerarMatricula();
         this._curso = curso;
         this._situacao = situacao;
+        this._campus = undefined;
         Aluno.quantidadeAlunos++;
      }
 

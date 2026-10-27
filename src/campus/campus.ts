@@ -77,6 +77,25 @@ class Campus {
         } );
     }
 
+    public adicionarAluno(aluno: Aluno): void {
+        if (aluno.campus !== undefined && aluno.campus !== this) {
+            throw new Error(`O aluno ${aluno.nome} ${aluno.sobrenome} já está associado a outro campus.`);
+        }
+        aluno.campus = this;
+
+        if (!this._alunos.includes(aluno)) {
+            this._alunos.push(aluno);
+        }
+    }
+
+    public listarAlunos(): void {
+        console.log(`Alunos do campus ${this._name}:`);
+
+        this._alunos.forEach((aluno, index) => {
+            console.log(`${index + 1}. ${aluno.nome} ${aluno.sobrenome} - Matrícula: ${aluno.matricula}`);
+        });
+    }
+
     
 }
 
