@@ -52,6 +52,32 @@ class Campus {
         this._professores = professores;
         this._tecnicosAdministrativos = tecnicosAdministrativos;
     }
+
+    /////////////////////////
+    //Métodos de Instância////
+    ////////////////////////
+
+    public adicionarProfessor(professor: Professor): void {
+        if (professor.campus !== undefined && professor.campus !== this) {
+            throw new Error(`O professor ${professor.nome} ${professor.sobrenome} já está associado a outro campus.`);
+            
+        }
+        professor.campus = this;
+
+        if (!this._professores.includes(professor)) {
+            this._professores.push(professor);
+        }
+    }
+
+    public listarProfessores(): void {
+        console.log(`Professores do campus ${this._name}:`);
+
+        this._professores.forEach((professor, index) => {
+            console.log(`${index + 1}. ${professor.nome} ${professor.sobrenome} - Matrícula: ${professor.matricula}`);
+        } );
+    }
+
+    
 }
 
 export { Campus };

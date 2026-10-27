@@ -10,7 +10,8 @@ class Professor extends Pessoa implements Projeto {
    //////////////////////////  
 
     private _salario: number = 0;
-    private _campus: Campus; 
+    private _campus?: Campus | undefined; 
+  
 
   ///////////////
   //Gets e Sets//
@@ -21,6 +22,13 @@ class Professor extends Pessoa implements Projeto {
   }
   public set salario(value: number) {
     this._salario = value;
+  }
+
+  public get campus(): Campus | undefined {
+    return this._campus;
+  }
+  public set campus(value: Campus | undefined) {
+    this._campus = value;
   }
 
    //////////////////////////
