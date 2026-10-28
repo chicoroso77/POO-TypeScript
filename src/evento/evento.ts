@@ -1,6 +1,6 @@
 import { Pessoa } from "../pessoa/pessoa.js";
 
-class Evento {
+class Evento  {
     private _nome: string;
     private _participantes: Array<Pessoa> = [];
     private _endereco: string;
