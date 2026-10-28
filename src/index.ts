@@ -36,3 +36,5 @@ console.log("-------------------------------");
 console.log(`Quantidade de pessoas: ${Pessoa.getQuantidadePessoas()}`);
 console.log(`Quantidade de alunos: ${Aluno.getQuantidadeAlunos()}`);
 console.log(`Quantidade de professores: ${Professor.getQuantidadeProfessores()}`);
+
+
