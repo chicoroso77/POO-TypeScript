@@ -83,6 +83,10 @@ class Aluno extends Pessoa implements Projeto {
       console.log("Isso é uma submissão de projeto de extensão de aluno.");
    }
 
+   public descreverVinculo(): string {
+      return `Vinculo: Aluno, Curso: ${this._curso}, Situação: ${this._situacao}, Campus: ${this._campus ? this._campus.name : "Nenhum"}`;
+   }
+
 
         static getQuantidadeAlunos(): number {
         return Aluno.quantidadeAlunos;

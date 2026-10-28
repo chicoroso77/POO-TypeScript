@@ -167,6 +167,7 @@ import type { Evento } from "../evento/evento.js";
 	//assim é possivel que cada classe que herde de pessoa implemente sua forma específica de gerar matricula (Polimorfismo)
 
     protected abstract gerarMatricula(): number;
+    public abstract descreverVinculo(): string;
 
 }
 

@@ -24,6 +24,10 @@ class Bibliotecario extends TecnicoAdministrativo {
         this._CRB = CRB;
     }
 
+    public descreverVinculo(): string {
+        return `Vinculo: Bibliotecario, CRB: ${this._CRB}`;
+    }
+
 }
 
 export { Bibliotecario };

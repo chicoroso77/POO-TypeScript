@@ -74,6 +74,7 @@ class Campus {
 
         this._professores.forEach((professor, index) => {
             console.log(`${index + 1}. ${professor.nome} ${professor.sobrenome} - Matrícula: ${professor.matricula}`);
+            console.log(`   ${professor.descreverVinculo()}`);
         } );
     }
 
@@ -90,9 +91,10 @@ class Campus {
 
     public listarAlunos(): void {
         console.log(`Alunos do campus ${this._name}:`);
-
+ 
         this._alunos.forEach((aluno, index) => {
             console.log(`${index + 1}. ${aluno.nome} ${aluno.sobrenome} - Matrícula: ${aluno.matricula}`);
+            console.log(`   ${aluno.descreverVinculo()}`);
         });
     }
 

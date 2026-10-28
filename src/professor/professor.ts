@@ -68,6 +68,10 @@ class Professor extends Pessoa implements Projeto {
     public SubmeterProjetoExtensao(): void {
       console.log("Isso é uma submissão de projeto de extensão de Professor.");
     }
+
+    public descreverVinculo(): string {
+    return `Professor vinculado ao campus ${this._campus ? this._campus.name : "Nenhum"}.`;
+    }
        
      
    /////////////////////////

@@ -24,6 +24,10 @@ class Psicologo extends TecnicoAdministrativo {
         super(nome, sobrenome, sexo, CPF, idade, brasileiro, enderecos, nacionalidade);
         this._CRP = CRP;
     }
+
+    public descreverVinculo(): string {
+        return `Vinculo: Psicologo, CRP: ${this._CRP}`;
+    }
      
 }
 
