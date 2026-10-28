@@ -98,7 +98,8 @@ enum SituacaoAluno {
       TRANCADO = "Trancado",
       CONCLUIDO = "Concluído",
       CANCELADO = "Cancelado",   
-      FORMANDO = "Formando"
+      FORMANDO = "Formando",
+      VISITANTE = "Visitante"
 }
 
 export { Aluno, SituacaoAluno };

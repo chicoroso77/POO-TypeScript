@@ -1,4 +1,3 @@
-import { Pessoa } from '../pessoa/pessoa.js';
 import { Professor } from '../professor/professor.js';
 
 class VisitanteDocente extends Professor {
@@ -30,7 +29,7 @@ class VisitanteDocente extends Professor {
     }
 
     constructor(nome: string,sobrenome: string,sexo: string,CPF: string, idade: number, brasileiro: boolean,  instituicaoDeOrigem: string, areaDeAtuacao: string, periodoDePermanencia: string) {
-        super(nome, sobrenome, sexo, CPF, idade, brasileiro);
+        super(nome, sobrenome, idade, brasileiro, [], sexo, CPF, 0);
         this._instituicaoDeOrigem = instituicaoDeOrigem;
         this._areaDeAtuacao = areaDeAtuacao;
         this._periodoDePermanencia = periodoDePermanencia;
@@ -42,7 +41,7 @@ class VisitanteDocente extends Professor {
     }
 
     public descreverVinculo(): string {
-        return `Vinculo: Visitante Docente, Instituição de Origem: ${this._instituicaoDeOrigem}, Área de Atuação: ${this._areaDeAtuacao}, Período de Permanência: ${this._periodoDePermanencia}`;
+        return `Vínculo: Visitante Docente, Instituição de Origem: ${this._instituicaoDeOrigem}, Área de Atuação: ${this._areaDeAtuacao}, Período de Permanência: ${this._periodoDePermanencia}`;
     }
     
     public static getQuantidadeVisitantesDocentes(): number {

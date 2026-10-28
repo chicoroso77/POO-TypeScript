@@ -1,5 +1,5 @@
 import { Pessoa } from '../pessoa/pessoa.js';
-import { Aluno } from '../aluno/aluno.js';
+import { Aluno, SituacaoAluno } from '../aluno/aluno.js';
 
 class VisitanteDiscente extends Aluno {
     private _instituicaoDeOrigem: string = '';
@@ -35,7 +35,7 @@ class VisitanteDiscente extends Aluno {
     }
 
     constructor(nome: string,sobrenome: string,sexo: string,CPF: string, idade: number, brasileiro: boolean,  instituicaoDeOrigem: string, cursoDeOrigem: string, periodoDePermanencia: string) {
-        super(nome, sobrenome, sexo, CPF, idade, brasileiro);
+        super(nome, sobrenome, sexo, CPF, idade, brasileiro, [], cursoDeOrigem, SituacaoAluno.VISITANTE);
         this._instituicaoDeOrigem = instituicaoDeOrigem;
         this._cursoDeOrigem = cursoDeOrigem;
         this._periodoDePermanencia = periodoDePermanencia;
@@ -43,7 +43,7 @@ class VisitanteDiscente extends Aluno {
     }
 
     protected gerarMatricula(): number {
-        return Math.floor(Math.random() * 9000) + 10000;
+        return Math.floor(Math.random() * 90000) + 10000;
     }
 
     public descreverVinculo(): string {
