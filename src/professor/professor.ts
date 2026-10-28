@@ -45,7 +45,7 @@ class Professor extends Pessoa implements Projeto {
         super( nome, sobrenome, sexo, CPF, idade, brasileiro, enderecos);
         this.matricula = this.gerarMatricula();
         this._salario = salario;
-        this._campus = {} as Campus; // Inicializa o campus 
+        this._campus = undefined; // Inicializa o campus
         Professor.quantidadeProfessores++;
      }
   

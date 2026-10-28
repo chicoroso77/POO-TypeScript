@@ -1,6 +1,7 @@
 import { Pessoa } from '../pessoa/pessoa.js';
+import { Professor } from '../professor/professor.js';
 
-class VisitanteDocente extends Pessoa {
+class VisitanteDocente extends Professor {
     private _instituicaoDeOrigem: string = '';
     private _areaDeAtuacao: string = '';
     private _periodoDePermanencia: string = '';
