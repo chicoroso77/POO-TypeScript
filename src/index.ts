@@ -32,12 +32,21 @@ campus2.listarProfessores();
 campus1.listarAlunos();
 campus2.listarAlunos();
 
-//console.log("\n----------Inscrever os participantes no evento-----------");
+
+console.log("\n----------Inscrever os participantes no evento-----------");
 // Inscrever os participantes no evento
 evento.adicionarParticipante(Felipe);
 evento.adicionarParticipante(Diego);
 evento.adicionarParticipante(João);
 evento.adicionarParticipante(Maria);
+// Tentativa de inscrever Felipe novamente
+evento.adicionarParticipante(Felipe);
+//teste de listagem de participantes e eventos
+evento.listarParticipantes();
+Felipe.listarEventos();
+Diego.listarEventos();
+João.listarEventos();
+Maria.listarEventos();
 
 
 console.log("\n-------------------------------");

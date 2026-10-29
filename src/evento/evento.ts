@@ -45,6 +45,8 @@ class Evento  {
         this._participantes.forEach((participante, index) => {
             console.log(`${index + 1}. ${participante.nome}`);
         });
+
+        console.log("");
     }
 
 }
