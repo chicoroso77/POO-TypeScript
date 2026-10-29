@@ -25,10 +25,14 @@ const campus2: Campus = new Campus("Campus São Paulo", "Rua B", [], [], []);
 // Associar professores e alunos aos campi
 campus1.adicionarProfessor(Diego);
 campus1.adicionarAluno(Felipe);
+campus2.adicionarProfessor(João);
+campus2.adicionarAluno(Maria);
 campus1.listarProfessores();
 campus2.listarProfessores();
+campus1.listarAlunos();
+campus2.listarAlunos();
 
-console.log("\n----------Inscrever os participantes no evento-----------");
+//console.log("\n----------Inscrever os participantes no evento-----------");
 // Inscrever os participantes no evento
 evento.adicionarParticipante(Felipe);
 evento.adicionarParticipante(Diego);

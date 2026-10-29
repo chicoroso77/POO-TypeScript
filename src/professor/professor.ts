@@ -60,9 +60,9 @@ class Professor extends Pessoa implements Projeto {
 	  // A implementação do método gerarMatricula na classe Aluno sobrescreve o método abstrato definido na classe Pessoa
 	  // Associaçaõ Comportamental - Dependência da Classe Aluno com as classes Date e Math
         
-     protected gerarMatricula(): number {
+    protected gerarMatricula(): number {
       return Math.floor(Math.random() * (99999999 - 10000000 + 1)) + 10000000;
-     }
+    }
 
     public submeterProjetoPesquisa(): void {
       console.log("Isso é uma submissão de projeto de pesquisa de Professor.");
