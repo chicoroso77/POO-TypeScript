@@ -2,8 +2,9 @@ import type { Campus } from "../campus/campus.js";
 import { Endereco } from "../endereco/enderecos.js";
 import { Pessoa } from "../pessoa/pessoa.js"
 import type { Projeto } from "../projeto/projeto.js";
+import type { UsuarioBiblioteca } from "../biblioteca/usuariobiblioteca.js";
 
-class Aluno extends Pessoa implements Projeto {
+class Aluno extends Pessoa implements Projeto, UsuarioBiblioteca {
      
     //////////////////////////
     //Atributos de instância//
@@ -88,6 +89,19 @@ class Aluno extends Pessoa implements Projeto {
    }
 
 
+
+   public identificar(): string {
+      return `Matrícula: ${this.matricula}, Nome: ${this.nome} ${this.sobrenome}`;
+   }
+
+   public estaAptoParaEmprestimo(): boolean {
+      return this._situacao === SituacaoAluno.ATIVO ||
+      this._situacao === SituacaoAluno.Matriculado ||
+      this._situacao === SituacaoAluno.FORMANDO;
+   }
+
+
+      /////Método Estático/////
         static getQuantidadeAlunos(): number {
         return Aluno.quantidadeAlunos;
         }

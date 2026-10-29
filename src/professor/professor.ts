@@ -3,8 +3,9 @@ import { Endereco } from "../endereco/enderecos.js";
 import { Pessoa } from "../pessoa/pessoa.js"
 import type { Projeto } from "../projeto/projeto.js";
 import type { Evento } from "../evento/evento.js";
+import type { UsuarioBiblioteca } from "../biblioteca/usuariobiblioteca.js";
 
-class Professor extends Pessoa implements Projeto {
+class Professor extends Pessoa implements Projeto, UsuarioBiblioteca {
 
    //////////////////////////
    //Atributos de instância//
@@ -74,7 +75,17 @@ class Professor extends Pessoa implements Projeto {
     public descreverVinculo(): string {
     return `Vínculo: Professor do campus ${this._campus?.name ?? 'Não associado'}`;
     }
-       
+
+
+    public identificar(): string {
+      return `Matrícula: ${this.matricula}, Nome: ${this.nome} ${this.sobrenome}`;
+    }
+
+    public estaAptoParaEmprestimo(): boolean {
+      return true; // Professores estão sempre aptos para empréstimo
+    }
+
+    
      
    /////////////////////////
    //Métodos Estáticos//////

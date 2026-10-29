@@ -48,6 +48,12 @@ Diego.listarEventos();
 João.listarEventos();
 Maria.listarEventos();
 
+console.log("\n----------Verificar aptidão para empréstimo-----------");
+console.log(`Felipe apto para empréstimo: ${Felipe.estaAptoParaEmprestimo()}`);
+console.log(`Diego apto para empréstimo: ${Diego.estaAptoParaEmprestimo()}`);
+console.log(`João apto para empréstimo: ${João.estaAptoParaEmprestimo()}`);
+console.log(`Maria apto para empréstimo: ${Maria.estaAptoParaEmprestimo()}`);
+
 
 console.log("\n-------------------------------");
 console.log(`Quantidade de pessoas: ${Pessoa.getQuantidadePessoas()}`);
