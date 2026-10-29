@@ -42,7 +42,7 @@ class VisitanteDocente extends Professor {
     }
 
     public descreverVinculo(): string {
-        return `${this.nome} ${this.sobrenome} é Visitante Docente da Instituição: ${this._instituicaoDeOrigem}, na área de Atuação: ${this._areaDeAtuacao}, por um período: ${this._periodoDePermanencia}`;
+        return `${this.nome} ${this.sobrenome} é Visitante Docente da Instituição: ${this._instituicaoDeOrigem}, na área de Atuação: ${this._areaDeAtuacao}, por um período de ${this._periodoDePermanencia}`;
     }
     
     public static getQuantidadeVisitantesDocentes(): number {

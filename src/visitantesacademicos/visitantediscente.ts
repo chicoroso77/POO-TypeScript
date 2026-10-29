@@ -47,7 +47,7 @@ class VisitanteDiscente extends Aluno {
     }
 
     public descreverVinculo(): string {
-        return `Vinculo: Visitante Discente, Instituição de Origem: ${this._instituicaoDeOrigem}, Curso de Origem: ${this._cursoDeOrigem}, Período de Permanência: ${this._periodoDePermanencia}`;
+        return `Vínculo: Visitante Discente, Instituição de Origem: ${this._instituicaoDeOrigem}, Curso de Origem: ${this._cursoDeOrigem}, Período de Permanência: ${this._periodoDePermanencia}`;
     }
     
     public static getQuantidadeVisitantesDiscentes(): number {

@@ -84,7 +84,7 @@ class Aluno extends Pessoa implements Projeto {
    }
 
    public descreverVinculo(): string {
-      return `Vinculo: Aluno, Curso: ${this._curso}, Situação: ${this._situacao}, Campus: ${this._campus ? this._campus.name : "Nenhum"}`;
+      return `Vínculo: Aluno, Curso: ${this._curso}, Situação: ${this._situacao}, Campus: ${this._campus ? this._campus.name : "Nenhum"}`;
    }
 
 
