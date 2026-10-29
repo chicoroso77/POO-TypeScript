@@ -2,6 +2,7 @@ import type { Campus } from "../campus/campus.js";
 import { Endereco } from "../endereco/enderecos.js";
 import { Pessoa } from "../pessoa/pessoa.js"
 import type { Projeto } from "../projeto/projeto.js";
+import type { Evento } from "../evento/evento.js";
 
 class Professor extends Pessoa implements Projeto {
 
@@ -34,6 +35,7 @@ class Professor extends Pessoa implements Projeto {
    //////////////////////////
    //Atributos estáticos/////
    //////////////////////////
+
      
      static quantidadeProfessores: number = 0;
 
@@ -70,7 +72,7 @@ class Professor extends Pessoa implements Projeto {
     }
 
     public descreverVinculo(): string {
-    return `Professor vinculado ao campus ${this._campus ? this._campus.name : "Nenhum"}.`;
+    return `Vínculo: Professor do campus ${this._campus?.name ?? 'Não associado'}`;
     }
        
      

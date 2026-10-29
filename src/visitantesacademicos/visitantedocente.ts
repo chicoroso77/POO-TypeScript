@@ -1,4 +1,5 @@
 import { Professor } from '../professor/professor.js';
+import{Endereco} from '../endereco/enderecos.js';
 
 class VisitanteDocente extends Professor {
     private _instituicaoDeOrigem: string = '';
@@ -28,8 +29,8 @@ class VisitanteDocente extends Professor {
         this._periodoDePermanencia = value;
     }
 
-    constructor(nome: string,sobrenome: string,sexo: string,CPF: string, idade: number, brasileiro: boolean,  instituicaoDeOrigem: string, areaDeAtuacao: string, periodoDePermanencia: string) {
-        super(nome, sobrenome, idade, brasileiro, [], sexo, CPF, 0);
+    constructor(nome: string,sobrenome: string, sexo: string, CPF: string, idade: number, brasileiro: boolean, enderecos: Endereco[], salario: number, instituicaoDeOrigem: string, areaDeAtuacao: string, periodoDePermanencia: string) {
+        super(nome, sobrenome, idade, brasileiro, enderecos, sexo, CPF, salario);
         this._instituicaoDeOrigem = instituicaoDeOrigem;
         this._areaDeAtuacao = areaDeAtuacao;
         this._periodoDePermanencia = periodoDePermanencia;
