@@ -4,7 +4,7 @@ import type { TecnicoAdministrativo } from "../tecnico-administrativo/tecnico-ad
 
 class Campus {
     private _name: string = '';
-    private _endereco: string = '';
+    private _endereco!: string;
     private _alunos: Array<Aluno> = [];
     private _professores: Array<Professor> = [];
     private _tecnicosAdministrativos: Array<TecnicoAdministrativo> = [];
@@ -62,7 +62,7 @@ class Campus {
             throw new Error(`O professor ${professor.nome} ${professor.sobrenome} já está associado a outro campus.`);
             
         }
-        professor.campus = this;
+        professor.campus = this; //associa o professor ao campus antes de adicioná-lo à lista
 
         if (!this._professores.includes(professor)) {
             this._professores.push(professor);
@@ -97,7 +97,6 @@ class Campus {
             console.log(`   ${aluno.descreverVinculo()}`);
         });
     }
-
     
 }
 
