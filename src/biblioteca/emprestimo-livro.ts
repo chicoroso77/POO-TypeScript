@@ -4,9 +4,10 @@ import { Endereco } from "../endereco/enderecos.js";
 class EmprestimoLivro {
     private _usuario: UsuarioBiblioteca;
     private _livro: string;
-    private _dataEmprestimo: Date;
-    private _dataDevolucao: Date;
+    private _dataEmprestimo: Date | null;
+    private _dataDevolucao: Date | null;
     private _enderecoBiblioteca: Endereco;
+    private _dataDevolucaoReal: Date | null = null;
     
 
     public get usuario(): UsuarioBiblioteca {
@@ -23,17 +24,17 @@ class EmprestimoLivro {
         this._livro = value;
     }
 
-    public get dataEmprestimo(): Date {
+    public get dataEmprestimo(): Date | null {
         return this._dataEmprestimo;
     }
-    public set dataEmprestimo(value: Date) {
+    public set dataEmprestimo(value: Date | null) {
         this._dataEmprestimo = value;
     }
 
-    public get dataDevolucao(): Date {
+    public get dataDevolucao(): Date | null {
         return this._dataDevolucao;
     }
-    public set dataDevolucao(value: Date) {
+    public set dataDevolucao(value: Date | null) {
         this._dataDevolucao = value;
     }
 
@@ -44,12 +45,19 @@ class EmprestimoLivro {
         this._enderecoBiblioteca = value;
     }
 
+    public get dataDevolucaoReal(): Date | null {
+        return this._dataDevolucaoReal;
+    }
+    public set dataDevolucaoReal(value: Date | null) {
+        this._dataDevolucaoReal = value;
+    }
 
-    constructor(usuario: UsuarioBiblioteca, livro: string, dataEmprestimo: Date, dataDevolucao: Date, enderecoBiblioteca: Endereco) {
+
+    constructor(usuario: UsuarioBiblioteca, livro: string,  enderecoBiblioteca: Endereco) {
         this._usuario = usuario;
         this._livro = livro;
-        this._dataEmprestimo = dataEmprestimo;
-        this._dataDevolucao = dataDevolucao;
+        this._dataEmprestimo = null;
+        this._dataDevolucao = null;
         this._enderecoBiblioteca = enderecoBiblioteca;
     }
     ///////////////////
@@ -68,15 +76,22 @@ class EmprestimoLivro {
     }
 
     public devolverLivro(): boolean {
-        this._dataDevolucao = new Date();
+        if (this._dataEmprestimo === null || this._dataDevolucaoReal !== null) {
+            return false;
+        }
+
+        this._dataDevolucaoReal = new Date();
         return true;
+
+        
     }
 
     public descreverEmprestimo(): string {
         return `Usuário: ${this._usuario.identificar()}, 
         Livro: ${this._livro},
-        Data de Empréstimo: ${this._dataEmprestimo.toDateString()}, 
-        Data de Devolução: ${this._dataDevolucao.toDateString()}, 
+        Data de Empréstimo: ${this._dataEmprestimo?.toDateString() ?? "N/A"}, 
+        Data de Devolução Prevista: ${this._dataDevolucao?.toDateString() ?? "N/A"},
+        Data de Devolução Real: ${this._dataDevolucaoReal?.toDateString() ?? "Ainda não devolvido"},
         Endereço da Biblioteca: ${this._enderecoBiblioteca.rua}, ${this._enderecoBiblioteca.bairro}, 
         ${this._enderecoBiblioteca.cidade} - ${this._enderecoBiblioteca.estado}`;
     }
