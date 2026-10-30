@@ -21,8 +21,8 @@ const Felipe: Aluno = new Aluno("Felipe", "José", "Masculino", "123.456.789-00"
 const Ana: Aluno = new Aluno("Ana", "Luiza", "Feminino", "987.654.321-00", 28, true, [endereco2], "Biologia", SituacaoAluno.CANCELADO);
 const Diego: Professor = new Professor("Diego", "Armando", 56, false, [endereco1, endereco2], "Masculino", "123.456.789-00", 1000);
 
-const campus1: Campus = new Campus("Campus Aracaju", "Rua Ara", [], [], []);
-const campus2: Campus = new Campus("Campus São Paulo", "Rua B", [], [], []);
+const campus1: Campus = new Campus("Campus Aracaju", endereco1, [], [], []);
+const campus2: Campus = new Campus("Campus São Paulo", endereco2, [], [], []);
 
 const emprestimo = new EmprestimoLivro(Felipe, "Livro de Informática",endereco1);
 const emprestimo2 = new EmprestimoLivro(Diego, "Livro de Matemática",endereco2);
