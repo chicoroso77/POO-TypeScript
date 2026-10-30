@@ -38,7 +38,7 @@ abstract class TecnicoAdministrativo extends Pessoa {
     }
 
     protected  gerarMatricula(): number {
-        let numero: number = Math.floor(Math.random() * 9000) + 100;
+        let numero: number = Math.floor(Math.random() * 9000) + 1000;
         return Number(`${numero}`);
     }
     
