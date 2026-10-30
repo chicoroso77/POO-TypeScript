@@ -1,10 +1,11 @@
 import { Aluno } from "../aluno/aluno.js";
 import { Professor } from "../professor/professor.js";
 import type { TecnicoAdministrativo } from "../tecnico-administrativo/tecnico-administrativo.js";
+import { Endereco } from "../endereco/enderecos.js";
 
 class Campus {
     private _name: string = '';
-    private _endereco!: string;
+    private _endereco!: Endereco;
     private _alunos: Array<Aluno> = [];
     private _professores: Array<Professor> = [];
     private _tecnicosAdministrativos: Array<TecnicoAdministrativo> = [];
@@ -16,10 +17,10 @@ class Campus {
         this._name = value;
     }
 
-    public get endereco(): string {
+    public get endereco(): Endereco {
         return this._endereco;
     }
-    public set endereco(value: string) {
+    public set endereco(value: Endereco) {
         this._endereco = value;
     }
 
