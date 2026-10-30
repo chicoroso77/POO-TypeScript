@@ -48,7 +48,7 @@ class Campus {
     // Constructor
     constructor(name: string, endereco: Endereco, alunos: Array<Aluno>, professores: Array<Professor>, tecnicosAdministrativos: Array<TecnicoAdministrativo>) {
         this._name = name;
-        this._endereco = Endereco;
+        this._endereco = endereco;
         this._alunos = alunos;
         this._professores = professores;
         this._tecnicosAdministrativos = tecnicosAdministrativos;
