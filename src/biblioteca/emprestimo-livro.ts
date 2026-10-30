@@ -72,6 +72,15 @@ class EmprestimoLivro {
         return true;
     }
 
+    public descreverEmprestimo(): string {
+        return `Usuário: ${this._usuario.identificar()}, 
+        Livro: ${this._livro},
+        Data de Empréstimo: ${this._dataEmprestimo.toDateString()}, 
+        Data de Devolução: ${this._dataDevolucao.toDateString()}, 
+        Endereço da Biblioteca: ${this._enderecoBiblioteca.rua}, ${this._enderecoBiblioteca.bairro}, 
+        ${this._enderecoBiblioteca.cidade} - ${this._enderecoBiblioteca.estado}`;
+    }
+
     
     
 }
